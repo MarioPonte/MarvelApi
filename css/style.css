@@ -16,10 +16,64 @@ body{
     width: 120px;
 }
 
+#infoSection{
+    text-align: center;
+}
+
+.heroInfo{
+    padding: 20px;
+    margin: 5px;
+    width: 340px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.heroName{
+    font-size: 18px;
+    margin: 10px;
+}
+
 .heroImg{
-    width: 400px;
+    width: 300px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .nav-link{
     color: white !important;
+}
+
+.navbar{
+    margin: 0px 0px 10px 10px !important;
+}
+
+#searchHero{
+    color: black;
+    border: none;
+    width: 400px;
+    height: 50px;
+    padding: 20px;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    margin: 50px 5px 50px 50px;
+}
+
+#btnSearchHero{
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: white;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    background-color: #DF3030;
+    border: 6px solid white;
+    transition: 0.15s;
+}
+
+#btnSearchHero:hover{
+    color: #DF3030;
+    background-color: white;
+    border: 6px solid white;
 }
