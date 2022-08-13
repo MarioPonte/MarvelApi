@@ -21,4 +21,22 @@ async function getDados() {
     }
 
 }
+
+let inputValue = document.getElementById("searchHero").value;
+
+async function searchData() {
+
+    let inputValue = document.getElementById("searchHero").value;
+
+    const searchUrl = "https://gateway.marvel.com/v1/public/characters?name=" + inputValue + "&apikey=13211d1e170e426bd4688717129310e6&ts=1&hash=95520260e855ed5e627a8f270f9c9505";
+
+    const searchDados = await fetch(searchUrl);
+    const searchResponse = await searchDados.json();
+
+    const searchPegueiDados = JSON.parse(JSON.stringify(searchResponse));
+
+    for(var i=0; i<(searchPegueiDados.data.results).length; i++){
+        $('#infoSection').prepend('<div class="heroInfo"><img src="' + searchPegueiDados.data.results[i].thumbnail.path + '.' + searchPegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="heroImg"><h2 class="heroName">' + searchPegueiDados.data.results[i].name + '</h2></div>');
+    }
+}
 getDados();
