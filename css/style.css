@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: #fff;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -26,6 +25,7 @@ body{
     width: 340px;
     display: inline-block;
     cursor: pointer;
+    color: white;
 }
 
 .heroName{
