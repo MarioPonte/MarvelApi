@@ -17,7 +17,7 @@ async function getDados() {
     const pegueiDados = JSON.parse(JSON.stringify(response));
 
     for(var i=0; i<(pegueiDados.data.results).length; i++){
-        $('#infoSection').append('<div class="heroInfo" onclick="showModal()"><img src="' + pegueiDados.data.results[i].thumbnail.path + '.' + pegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="heroImg"><h2 class="heroName">' + pegueiDados.data.results[i].name + '</h2></div>');
+        $('#infoSection').append('<div id="heroInfo' + i + '" class="heroInfo" onclick="showModal()"><img src="' + pegueiDados.data.results[i].thumbnail.path + '.' + pegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="heroImg"><h2 class="heroName">' + pegueiDados.data.results[i].name + '</h2></div>');
     }
 
 }
