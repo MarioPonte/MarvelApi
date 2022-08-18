@@ -17,10 +17,26 @@ async function getDados() {
     const pegueiDados = JSON.parse(JSON.stringify(response));
 
     for(var i=0; i<(pegueiDados.data.results).length; i++){
-        $('#infoSection').append('<div id="heroInfo' + i + '" class="heroInfo" onclick="showModal()"><img src="' + pegueiDados.data.results[i].thumbnail.path + '.' + pegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="heroImg"><h2 class="heroName">' + pegueiDados.data.results[i].name + '</h2></div>');
+        $('#infoSection').append('<div id="' + i + '" class="heroInfo" onclick="showModal(' + i + ')"><img src="' + pegueiDados.data.results[i].thumbnail.path + '.' + pegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="heroImg"><h2 class="heroName">' + pegueiDados.data.results[i].name + '</h2></div>');
     }
 
 }
+
+// Mostrar Modal
+
+async function showModal(clickedElement){
+    const dadosModal = await fetch(url);
+    const responseModal = await dadosModal.json();
+
+    const pegueiDadosModal = JSON.parse(JSON.stringify(responseModal));
+
+    console.log(pegueiDadosModal.data.results[clickedElement].name);
+    
+    
+    let modalHero = new bootstrap.Modal(document.getElementById("modalHero")).show();
+}
+
+// /Mostrar Modal
 
 let inputValue = document.getElementById("searchHero").value;
 
