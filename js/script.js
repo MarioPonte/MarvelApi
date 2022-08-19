@@ -30,8 +30,15 @@ async function showModal(clickedElement){
 
     const pegueiDadosModal = JSON.parse(JSON.stringify(responseModal));
 
-    console.log(pegueiDadosModal.data.results[clickedElement].name);
-    
+    /*
+
+    if(pegueiDadosModal.data.results[clickedElement].description != ""){
+        document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalHeroName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].name + '</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Description:</p></strong> <p>' + pegueiDadosModal.data.results[clickedElement].description + '</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary">Comics</button> <button type="button" class="btn btn-primary">Series</button> <button type="button" class="btn btn-primary">Stories</button> <button type="button" class="btn btn-primary">Events</button> </div> </div> </div>';
+    }else{
+        document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalHeroName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].name + '</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary">Comics</button> <button type="button" class="btn btn-primary">Series</button> <button type="button" class="btn btn-primary">Stories</button> <button type="button" class="btn btn-primary">Events</button> </div> </div> </div>';
+    }
+
+    */
     
     let modalHero = new bootstrap.Modal(document.getElementById("modalHero")).show();
 }

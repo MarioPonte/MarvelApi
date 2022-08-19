@@ -57,6 +57,10 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.heroHistory{
+    padding: var(--bs-modal-padding);
+}
+
 .nav-link{
     color: white !important;
 }

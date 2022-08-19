@@ -75,11 +75,30 @@
             <strong><p>Description:</p></strong>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente veniam recusandae, quam, laudantium architecto dicta tenetur velit eius impedit iure quaerat enim modi soluta delectus repellat reprehenderit maxime neque alias!</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Comics</button>
-            <button type="button" class="btn btn-primary">Series</button>
+          <div class="heroHistory">
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseComics" aria-expanded="false" aria-controls="collapseComics">Comics</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseSeries" aria-expanded="false" aria-controls="collapseSeries">Series</button>
             <button type="button" class="btn btn-primary">Stories</button>
             <button type="button" class="btn btn-primary">Events</button>
+
+            <div class="collapse" id="collapseComics">
+              <div class="card card-body">
+                <ul>
+                  <li>Vingadores: Guerra Infinita</li>
+                  <li>Vingadores: Endgame</li>
+                  <li>Vingadores: Dinastia Kang</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseSeries">
+              <div class="card card-body">
+                <ul>
+                  <li>Secret Wars</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
