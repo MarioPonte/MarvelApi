@@ -61,6 +61,14 @@ body{
     padding: var(--bs-modal-padding);
 }
 
+.btnInfoHero{
+    margin-bottom: 10px;
+}
+
+.modal-title{
+    font-size: 26px;
+}
+
 .nav-link{
     color: white !important;
 }
