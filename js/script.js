@@ -31,28 +31,24 @@ async function showModal(clickedElement){
     const pegueiDadosModal = JSON.parse(JSON.stringify(responseModal));
 
     var comicsHero = "";
-    for(var i=0; i<pegueiDadosModal.data.results[clickedElement].comics.items.length; i++){
-        comicsHero += "<li>" + pegueiDadosModal.data.results[clickedElement].comics.items[i].name + "</li>";
-    }
+    if(pegueiDadosModal.data.results[clickedElement].comics.available!=0){
+        for(var i=0; i<pegueiDadosModal.data.results[clickedElement].comics.items.length; i++) comicsHero += "<li>" + pegueiDadosModal.data.results[clickedElement].comics.items[i].name + "</li>";
+    }else comicsHero = '<p class="text-danger"><i class="fa-solid fa-ban"></i> No comics available </p>';
 
     var seriesHero = "";
-    for(var i=0; i<pegueiDadosModal.data.results[clickedElement].series.items.length; i++){
-        seriesHero += "<li>" + pegueiDadosModal.data.results[clickedElement].series.items[i].name + "</li>";
-    }
+    if(pegueiDadosModal.data.results[clickedElement].series.available!=0){
+        for(var i=0; i<pegueiDadosModal.data.results[clickedElement].series.items.length; i++) seriesHero += "<li>" + pegueiDadosModal.data.results[clickedElement].series.items[i].name + "</li>";
+    }else seriesHero = '<p class="text-danger"><i class="fa-solid fa-ban"></i> No series available </p>';
 
     var storiesHero = "";
-    for(var i=0; i<pegueiDadosModal.data.results[clickedElement].stories.items.length; i++){
-        storiesHero += "<li>" + pegueiDadosModal.data.results[clickedElement].stories.items[i].name + "</li>";
-    }
+    if(pegueiDadosModal.data.results[clickedElement].stories.available!=0){
+        for(var i=0; i<pegueiDadosModal.data.results[clickedElement].stories.items.length; i++) storiesHero += "<li>" + pegueiDadosModal.data.results[clickedElement].stories.items[i].name + "</li>";
+    }else storiesHero = '<p class="text-danger"><i class="fa-solid fa-ban"></i> No stories available </p>';
 
     var eventsHero = "";
     if(pegueiDadosModal.data.results[clickedElement].events.available!=0){
-        for(var i=0; i<pegueiDadosModal.data.results[clickedElement].events.items.length; i++){
-            eventsHero += "<li>" + pegueiDadosModal.data.results[clickedElement].events.items[i].name + "</li>";
-        }
-    }else{
-        eventsHero = '<p class="text-danger"><i class="fa-solid fa-ban"></i> No events available </p>';
-    }
+        for(var i=0; i<pegueiDadosModal.data.results[clickedElement].events.items.length; i++) eventsHero += "<li>" + pegueiDadosModal.data.results[clickedElement].events.items[i].name + "</li>";
+    }else eventsHero = '<p class="text-danger"><i class="fa-solid fa-ban"></i> No events available </p>';
 
     if(pegueiDadosModal.data.results[clickedElement].description != "") document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalHeroName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].name + '</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Description:</p></strong> <p>' + pegueiDadosModal.data.results[clickedElement].description + '</p> </div> <div class="heroHistory"> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseComics" aria-expanded="false" aria-controls="collapseComics">Comics</button> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseSeries" aria-expanded="false" aria-controls="collapseSeries">Series</button> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseStories" aria-expanded="false" aria-controls="collapseStories">Stories</button> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseEvents" aria-expanded="false" aria-controls="collapseEvents">Events</button> <div class="collapse" id="collapseComics"> <div class="card card-body"> <ul> ' + comicsHero + ' </ul> </div> </div> <div class="collapse" id="collapseSeries"> <div class="card card-body"> <ul> ' + seriesHero + ' </ul> </div> </div> <div class="collapse" id="collapseStories"> <div class="card card-body"> <ul> ' + storiesHero + ' </ul> </div> </div> <div class="collapse" id="collapseEvents"> <div class="card card-body"> <ul> ' + eventsHero + ' </ul> </div> </div> </div> </div> </div>';
     else document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalHeroName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].name + '</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Description:</p></strong> <p class="text-danger"><i class="fa-solid fa-ban"></i> No description available </p> </div> <div class="heroHistory"> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseComics" aria-expanded="false" aria-controls="collapseComics">Comics</button> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseSeries" aria-expanded="false" aria-controls="collapseSeries">Series</button> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseStories" aria-expanded="false" aria-controls="collapseStories">Stories</button> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseEvents" aria-expanded="false" aria-controls="collapseEvents">Events</button> <div class="collapse" id="collapseComics"> <div class="card card-body"> <ul> ' + comicsHero + ' </ul> </div> </div> <div class="collapse" id="collapseSeries"> <div class="card card-body"> <ul> ' + seriesHero + ' </ul> </div> </div> <div class="collapse" id="collapseStories"> <div class="card card-body"> <ul> ' + storiesHero + ' </ul> </div> </div> <div class="collapse" id="collapseEvents"> <div class="card card-body"> <ul> ' + eventsHero + ' </ul> </div> </div> </div> </div> </div>';

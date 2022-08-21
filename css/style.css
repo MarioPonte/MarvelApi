@@ -111,3 +111,21 @@ body{
 .searchInput{
     text-align: center;
 }
+
+.btn-primary{
+    background-color: #DF3030 !important;
+    border: none !important;
+    border-radius: 0px !important;
+    text-transform: uppercase !important;
+    font-weight: 600;
+}
+
+.btn-primary:focus{
+    box-shadow: none !important;
+
+    background-color: white !important;
+    color: #DF3030;
+    box-shadow:0px 0px 0px 4px red inset !important;
+    text-transform: uppercase !important;
+    font-weight: 600;
+}
