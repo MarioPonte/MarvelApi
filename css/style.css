@@ -47,7 +47,7 @@ body{
 }
 
 .heroName{
-    font-size: 18px;
+    font-size: 16px;
     margin: 10px;
 }
 
@@ -63,6 +63,7 @@ body{
 
 .modal-title{
     font-size: 26px;
+    font-weight: 900;
 }
 
 .nav-link{
@@ -82,6 +83,7 @@ body{
     font-size: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
     margin: 50px 5px 50px 50px;
+    outline: none;
 }
 
 #btnSearchHero{

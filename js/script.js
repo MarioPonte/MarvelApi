@@ -64,7 +64,7 @@ async function searchData() {
 
     let inputValue = document.getElementById("searchHero").value;
 
-    const searchUrl = "https://gateway.marvel.com/v1/public/characters?name=" + inputValue + "&ts=1&hash=95520260e855ed5e627a8f270f9c9505&apikey=13211d1e170e426bd4688717129310e6";
+    const searchUrl = "https://gateway.marvel.com/v1/public/characters?nameStartsWith=" + inputValue + "&ts=1&hash=95520260e855ed5e627a8f270f9c9505&apikey=13211d1e170e426bd4688717129310e6";
 
     const searchDados = await fetch(searchUrl);
     const searchResponse = await searchDados.json();
