@@ -37,6 +37,10 @@ body{
     text-align: center;
 }
 
+#infoSectionSearch{
+    text-align: center;
+}
+
 .heroInfo{
     padding: 20px;
     margin: 5px;
@@ -47,7 +51,7 @@ body{
 }
 
 .heroName{
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px;
 }
 
