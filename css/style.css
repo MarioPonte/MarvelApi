@@ -142,3 +142,15 @@ body{
     background-color: #DF3030 !important;
     color: white !important;
 }
+
+.navbar-toggler{
+    color: white;
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
