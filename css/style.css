@@ -154,3 +154,31 @@ body{
     outline: none;
     box-shadow: none;
 }
+
+.btnOptions{
+    text-align: center;
+}
+
+.btnOption{
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    border: 6px solid white;
+    padding: 40px 10px 40px 10px;
+    margin: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: inline-block;
+    width: 320px;
+
+    background-image: url("../images/characters1.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+.btnOption:hover{
+    color: white;
+    background-image: url("../images/characters2.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}

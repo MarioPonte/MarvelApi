@@ -34,7 +34,7 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="characters.html">Characters</a>
+              <a class="nav-link" href="#">Characters</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="comics.html">Comics</a>
@@ -52,13 +52,24 @@
         </div>
       </nav>
 
-      <div class="btnOptions">
-        <a class="btnOption" href="characters.html">Characters</a>
-        <a class="btnOption" href="comics.html">Comics</a>
-        <a class="btnOption" href="characters.html">Series</a>
-        <a class="btnOption" href="characters.html">Stories</a>
-        <a class="btnOption" href="characters.html">Events</a>
+      <div class="searchInput">
+        <input type="text" id="searchHero">
+        <input type="button" id="btnSearchHero" value="Search" onclick="searchData()">
       </div>
+      
+    <section id="infoSectionSearch">
+    </section>
+    <section id="infoSection">
+    </section>
+
+    <!-- Modal -->
+
+    <div class="modal fade" tabindex="-1" id="modalHero">
+    </div>
+
+    <!-- /Modal -->
+
+    
     
   </body>
 </html>
