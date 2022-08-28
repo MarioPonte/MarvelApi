@@ -171,14 +171,59 @@ body{
     display: inline-block;
     width: 320px;
 
-    background-image: url("../images/characters1.jpg");
+    background-image: url("https://wallpapercave.com/wp/wp2766839.jpg");
     background-repeat: no-repeat;
     background-size: 310px;
 }
 
 .btnOption:hover{
     color: white;
+}
+
+#btnOptionCharacters{
+    background-image: url("../images/characters1.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionCharacters:hover{
     background-image: url("../images/characters2.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionComics{
+    background-image: url("../images/comics1.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionComics:hover{
+    background-image: url("../images/comics2.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionSeries{
+    background-image: url("../images/series1.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionSeries:hover{
+    background-image: url("../images/series2.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionStories{
+    background-image: url("../images/stories1.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionStories:hover{
+    background-image: url("../images/stories2.jpg");
     background-repeat: no-repeat;
     background-size: 310px;
 }
