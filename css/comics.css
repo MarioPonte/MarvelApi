@@ -1,0 +1,13 @@
+.comicInfo{
+    padding: 20px 0px 20px 0px;
+    width: 260px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+}
+
+.comicImg{
+    width: 200px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

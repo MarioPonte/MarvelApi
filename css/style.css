@@ -170,10 +170,6 @@ body{
     font-weight: 900;
     display: inline-block;
     width: 320px;
-
-    background-image: url("https://wallpapercave.com/wp/wp2766839.jpg");
-    background-repeat: no-repeat;
-    background-size: 310px;
 }
 
 .btnOption:hover{
@@ -224,6 +220,18 @@ body{
 
 #btnOptionStories:hover{
     background-image: url("../images/stories2.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionEvents{
+    background-image: url("../images/events1.jpg");
+    background-repeat: no-repeat;
+    background-size: 310px;
+}
+
+#btnOptionEvents:hover{
+    background-image: url("../images/events2.jpg");
     background-repeat: no-repeat;
     background-size: 310px;
 }
