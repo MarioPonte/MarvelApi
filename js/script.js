@@ -20,6 +20,8 @@ async function getDados() {
         $('#infoSection').append('<div id="' + i + '" class="heroInfo" onclick="showModal(' + i + ')"><img src="' + pegueiDados.data.results[i].thumbnail.path + '.' + pegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="heroImg"><h2 class="heroName">' + pegueiDados.data.results[i].name + '</h2></div>');
     }
 
+    $('#footerId').append("<a class='marvelLink' href='http://marvel.com' target='_Blank'>" + pegueiDados.attributionText + " / Site created by Mário Ponte</a>");
+
 }
 
 // Mostrar Modal
