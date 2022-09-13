@@ -20,6 +20,8 @@ async function getDados() {
         $('#infoSection').append('<div id="' + i + '" class="comicInfo" onclick="showModal(' + i + ')"><img src="' + pegueiDados.data.results[i].thumbnail.path + '.' + pegueiDados.data.results[i].thumbnail.extension + '" alt="" srcset="" class="comicImg"></div>');
     }
 
+    $('#footerId').append("<a class='marvelLink' href='http://marvel.com' target='_Blank'>" + pegueiDados.attributionText + " / Site created by Mário Ponte</a>");
+
 }
 
 // Mostrar Modal
@@ -38,9 +40,9 @@ async function showModal(clickedElement){
         if((i+1) != (pegueiDadosModal.data.results[clickedElement].creators.items).length) allCreators += ", ";
     }
 
-    document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalHeroName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Price:</strong> ' + pegueiDadosModal.data.results[clickedElement].prices[0].price + '$</p> <p><strong>Creators:</strong> ' + allCreators + '</p> </div> <div class="heroHistory"><button class="btn btn-primary btnInfoHero">More Info</button></div> </div> </div> </div> </div>';
+    document.getElementById("modalComic").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalComicName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Price:</strong> ' + pegueiDadosModal.data.results[clickedElement].prices[0].price + '$</p> <p><strong>Creators:</strong> ' + allCreators + '</p> </div> <div class="heroHistory"><a class="btn btn-primary btnInfoHero" href="' + pegueiDadosModal.data.results[clickedElement].urls[0].url + '" target="_Blank">More Info</a></div> </div> </div> </div> </div>';
     
-    let modalHero = new bootstrap.Modal(document.getElementById("modalHero")).show();
+    let modalComic = new bootstrap.Modal(document.getElementById("modalComic")).show();
 }
 
 // /Mostrar Modal
@@ -64,6 +66,12 @@ async function searchData() {
     }
 }
 
+$('#searchHero').keypress(function(event){
+    if(event.keyCode == 13){
+      $('#btnSearchHero').click();
+    }
+});
+
 // Mostrar Modal Pesquisa
 
 async function showModalSearch(clickedElement){
@@ -79,9 +87,9 @@ async function showModalSearch(clickedElement){
         if((i+1) != (pegueiDadosModal.data.results[clickedElement].creators.items).length) allCreators += ", ";
     }
 
-    document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalHeroName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Price:</strong> ' + pegueiDadosModal.data.results[clickedElement].prices[0].price + '$</p> <p><strong>Creators:</strong> ' + allCreators + '</p> </div> <div class="heroHistory"><button class="btn btn-primary btnInfoHero">More Info</button></div> </div> </div> </div> </div>';
+    document.getElementById("modalComic").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalComicName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Price:</strong> ' + pegueiDadosModal.data.results[clickedElement].prices[0].price + '$</p> <p><strong>Creators:</strong> ' + allCreators + '</p> </div> <div class="heroHistory"><a class="btn btn-primary btnInfoHero" href="' + pegueiDadosModal.data.results[clickedElement].urls[0].url + '" target="_Blank">More Info</a></div> </div> </div> </div> </div>';
     
-    let modalHero = new bootstrap.Modal(document.getElementById("modalHero")).show();
+    let modalComic = new bootstrap.Modal(document.getElementById("modalComic")).show();
 }
 
 // /Mostrar Modal Pesquisa

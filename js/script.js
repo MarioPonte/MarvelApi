@@ -79,6 +79,12 @@ async function searchData() {
     }
 }
 
+$('#searchHero').keypress(function(event){
+    if(event.keyCode == 13){
+      $('#btnSearchHero').click();
+    }
+});
+
 // Mostrar Modal Pesquisa
 
 async function showModalSearch(clickedElement){

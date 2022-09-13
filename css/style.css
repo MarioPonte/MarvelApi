@@ -76,6 +76,8 @@ body{
 
 .navbar{
     margin: 0px 0px 10px 10px !important;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 #searchHero{
