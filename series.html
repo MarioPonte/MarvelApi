@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="js/script.js" defer></script>
+    <script src="js/series.js" defer></script>
 
     <script src="https://kit.fontawesome.com/af5e23e73e.js" crossorigin="anonymous"></script>
 
@@ -52,15 +52,26 @@
         </div>
       </nav>
 
-      <div class="btnOptions">
-        <a id="btnOptionCharacters" class="btnOption" href="characters.html">Characters</a>
-        <a id="btnOptionComics" class="btnOption" href="comics.html">Comics</a>
-        <a id="btnOptionSeries" class="btnOption" href="characters.html">Series</a>
-        <a id="btnOptionStories" class="btnOption" href="characters.html">Stories</a>
-        <a id="btnOptionEvents" class="btnOption" href="characters.html">Events</a>
+      <div class="searchInput">
+        <input type="text" id="searchHero">
+        <input type="button" id="btnSearchHero" value="Search" onclick="searchData()">
       </div>
+      
+    <section id="infoSectionSearch">
+    </section>
+    <section id="infoSection">
+    </section>
 
-      <footer id="footerId" class="pageFooter"></footer>
+    <footer id="footerId" class="pageFooter"></footer>
+
+    <!-- Modal -->
+
+    <div class="modal fade" tabindex="-1" id="modalHero">
+    </div>
+
+    <!-- /Modal -->
+
+    
     
   </body>
 </html>
