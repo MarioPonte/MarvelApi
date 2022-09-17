@@ -1,0 +1,18 @@
+.serieInfo{
+    padding: 20px;
+    margin: 5px;
+    width: 340px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+}
+
+.serieImg{
+    width: 300px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#modalSerieName{
+    font-size: 18px;
+}
