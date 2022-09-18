@@ -261,6 +261,10 @@ body{
     color: white;
 }
 
+.creators{
+    font-size: 12px;
+}
+
 @media only screen and (max-width: 616px) {
     #searchHero{
         width: 60vw;

@@ -39,11 +39,15 @@ async function showModal(clickedElement){
         if((i+1) != (pegueiDadosModal.data.results[clickedElement].creators.items).length) allCreators += ", ";
     }
 
-    if(pegueiDadosModal.data.results[clickedElement].description != null){
-        document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalSerieName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Description:</p></strong> <p>' + pegueiDadosModal.data.results[clickedElement].description + '</p> <div><p><strong>Creators:</strong> ' + allCreators + '</p></div></div> </div> </div> </div>';
-    }else{
-        document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalSerieName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"><div><p><strong>Creators:</strong> ' + allCreators + '</p></div></div> </div> </div> </div>';
-    }
+
+
+    var comicsHero = "";
+    if(pegueiDadosModal.data.results[clickedElement].comics.available!=0){
+        for(var i=0; i<pegueiDadosModal.data.results[clickedElement].comics.items.length; i++) comicsHero += "<li>" + pegueiDadosModal.data.results[clickedElement].comics.items[i].name + "</li>";
+    }else comicsHero = '<p class="text-danger"><i class="fa-solid fa-ban"></i> No comics available </p>';
+
+    if(pegueiDadosModal.data.results[clickedElement].description != null) document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalSerieName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <strong><p>Description:</p></strong> <p>' + pegueiDadosModal.data.results[clickedElement].description + '</p> <div><p class="creators"><strong>Creators:</strong> ' + allCreators + '</p></div><div class="heroHistory"> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseComics" aria-expanded="false" aria-controls="collapseComics">Comics</button> <div class="collapse" id="collapseComics"> <div class="card card-body"> <ul>' + comicsHero + '</ul> </div></div> </div> </div> </div>';
+    else document.getElementById("modalHero").innerHTML = '<div class="modal-dialog modal-lg"><div class="modal-content"> <div class="modal-header"> <h5 id="modalSerieName" class="modal-title">' + pegueiDadosModal.data.results[clickedElement].title + '</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"><div><p class="creators"><strong>Creators:</strong> ' + allCreators + '</p></div> <div class="heroHistory"> <button type="button" class="btn btn-primary btnInfoHero" data-bs-toggle="collapse" data-bs-target="#collapseComics" aria-expanded="false" aria-controls="collapseComics">Comics</button> <div class="collapse" id="collapseComics"> <div class="card card-body"> <ul>' + comicsHero + '</ul> </div> </div></div> </div></div> </div>';
     
     let modalHero = new bootstrap.Modal(document.getElementById("modalHero")).show();
 }
