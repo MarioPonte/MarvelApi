@@ -277,3 +277,10 @@ body{
         border: 4px solid white;
     }
 }
+
+@media only screen and (max-width: 375px) {
+    .btnOption{
+        font-size: 10.5vw;
+        width: 85vw;
+    }
+}
